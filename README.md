@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+<h1>DevBurger-Frontend</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>Descrição</h2>
+<p>
+  O <strong>DevBurger-Frontend</strong> é a interface de uma aplicação web para uma hamburgueria digital. Este projeto foi desenvolvido com foco em proporcionar uma experiência de usuário fluida e responsiva, permitindo que os usuários naveguem pelo menu, façam pedidos online e personalizem suas refeições de maneira prática e intuitiva.
+</p>
 
-## Available Scripts
+<h2>Tecnologias Utilizadas</h2>
+<ul>
+  <li><strong>React</strong>: Biblioteca JavaScript para construção de interfaces de usuário.</li>
+  <li><strong>styled-components</strong>: Biblioteca para estilização de componentes utilizando CSS-in-JS.</li>
+  <li><strong>Axios</strong>: Cliente HTTP para comunicação com a API do backend.</li>
+  <li><strong>React Router</strong>: Gerenciamento de rotas para navegação entre páginas.</li>
+</ul>
 
-In the project directory, you can run:
+<h2>Funcionalidades</h2>
+<ul>
+  <li><strong>Menu Dinâmico:</strong> Exibição dos itens do cardápio com opções de personalização.</li>
+  <li><strong>Sistema de Pedidos:</strong> Facilidade para adicionar ou remover itens e acompanhar o status do pedido.</li>
+  <li><strong>Autenticação de Usuário:</strong> Integração com o backend para login e criação de contas.</li>
+  <li><strong>Responsividade Completa:</strong> Layout otimizado para dispositivos móveis e desktops.</li>
+</ul>
 
-### `npm start`
+<h2>Instalação</h2>
+<p>Para rodar este projeto localmente, siga os passos abaixo:</p>
+<ol>
+  <li>Clone este repositório:
+    <pre><code>git clone https://github.com/pablomartinsti/devBurger-Frontend.git</code></pre>
+  </li>
+  <li>Acesse o diretório do projeto:
+    <pre><code>cd devBurger-Frontend</code></pre>
+  </li>
+  <li>Instale as dependências:
+    <pre><code>yarn install</code></pre>
+  </li>
+  <li>Inicie o servidor de desenvolvimento:
+    <pre><code>yarn start</code></pre>
+  </li>
+</ol>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h2>Como Usar</h2>
+<ol>
+  <li>Abra o navegador e acesse <code>http://localhost:3000</code>.</li>
+  <li>Explore o menu e escolha seus itens preferidos.</li>
+  <li>Faça o login ou crie uma conta para concluir seu pedido.</li>
+  <li>Confirme o pedido e acompanhe o progresso em tempo real.</li>
+</ol>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Contribuição</h2>
+<p>Se você deseja contribuir para este projeto, siga as etapas abaixo:</p>
+<ol>
+  <li>Faça um fork deste repositório.</li>
+  <li>Crie uma nova branch com sua feature ou correção:
+    <pre><code>git checkout -b minha-feature</code></pre>
+  </li>
+  <li>Faça commit das suas alterações:
+    <pre><code>git commit -m "Descrição da minha feature"</code></pre>
+  </li>
+  <li>Envie a branch para o repositório:
+    <pre><code>git push origin minha-feature</code></pre>
+  </li>
+  <li>Abra um Pull Request para revisão.</li>
+</ol>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
