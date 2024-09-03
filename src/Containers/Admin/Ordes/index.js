@@ -1,36 +1,35 @@
 import React, { useEffect, useState } from 'react'
-
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
 
 import api from '../../../services/api'
-import Row from './row';
-import status from './order-status';
+import Row from './row'
+import status from './order-status'
 import { Container, Menu, LinkMenu } from './style'
-import formatDate from '../../../Utils/formatDate';
+import formatDate from '../../../Utils/formatDate'
 
 function Orders() {
-
   const [orders, setOrders] = useState([])
   const [FilteredOrders, setFilteredOrders] = useState([])
   const [activeStatus, setactiveStatus] = useState(1)
   const [rows, setrows] = useState([])
 
-
   useEffect(() => {
     async function loadOrders() {
       const { data } = await api.get('orders')
 
+      const sortedOrders = data.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      )
 
-      setOrders(data)
-      setFilteredOrders(data)
+      setOrders(sortedOrders)
+      setFilteredOrders(sortedOrders)
     }
-
 
     loadOrders()
   }, [])
@@ -42,28 +41,25 @@ function Orders() {
       date: formatDate(order.createdAt),
       status: order.status,
       products: order.products
-
     }
   }
+
   useEffect(() => {
     const newRows = FilteredOrders.map(ord => createData(ord))
     setrows(newRows)
-
   }, [FilteredOrders])
 
   useEffect(() => {
     if (activeStatus === 1) {
       setFilteredOrders(orders)
     } else {
-
       const statusIndex = status.findIndex(sts => sts.id === activeStatus)
-      const newFilteredOrders = FilteredOrders.filter(
-        order => order.status === status[statusIndex].value)
-
+      const newFilteredOrders = orders.filter(
+        order => order.status === status[statusIndex].value
+      )
       setFilteredOrders(newFilteredOrders)
     }
-
-  }, [orders])
+  }, [orders, activeStatus])
 
   function handleStatus(status) {
     if (status.id === 1) {
@@ -76,19 +72,23 @@ function Orders() {
     setactiveStatus(status.id)
   }
 
-
-
   return (
     <Container>
       <Menu>
-        {status && status.map(status => (
-          <LinkMenu key={status.id} onClick={() => handleStatus(status)} isActiveStatus={activeStatus === status.id}>{status.label}</LinkMenu>
-        ))}
-
+        {status &&
+          status.map(status => (
+            <LinkMenu
+              key={status.id}
+              onClick={() => handleStatus(status)}
+              isActiveStatus={activeStatus === status.id}
+            >
+              {status.label}
+            </LinkMenu>
+          ))}
       </Menu>
 
       <TableContainer component={Paper}>
-        <Table aria-label='collapsible table'>
+        <Table aria-label="collapsible table">
           <TableHead>
             <TableRow>
               <TableCell />
@@ -99,7 +99,14 @@ function Orders() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map(row => (<Row key={row.orderId} row={row} setOrders={setOrders} orders={orders} />))}
+            {rows.map(row => (
+              <Row
+                key={row.orderId}
+                row={row}
+                setOrders={setOrders}
+                orders={orders}
+              />
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

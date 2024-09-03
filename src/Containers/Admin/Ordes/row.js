@@ -2,46 +2,42 @@ import React from 'react'
 import ReactSelect from 'react-select'
 import { toast } from 'react-toastify'
 
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Box from '@mui/material/Box';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
-import api from '../../../services/api';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import Box from '@mui/material/Box'
+import Collapse from '@mui/material/Collapse'
+import IconButton from '@mui/material/IconButton'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import Typography from '@mui/material/Typography'
+import PropTypes from 'prop-types'
+import api from '../../../services/api'
 
-import { ProductsImg, ReactSelectStyle } from './style';
-import status from './order-status';
-import Orders from '.';
+import { ProductsImg, ReactSelectStyle } from './style'
+import status from './order-status'
+import Orders from '.'
 
 function Row({ row, setOrders, orders }) {
-
-  const [open, setOpen] = React.useState(false);
-  const [isLoading, setisLoading] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
+  const [isLoading, setisLoading] = React.useState(false)
 
   async function setNewStatus(id, status) {
     setisLoading(true)
     try {
-      await api.put(`orders/${id}`, { status }, { validateStatus: () => true }
-      )
+      await api.put(`orders/${id}`, { status }, { validateStatus: () => true })
       const newOrders = orders.map(order => {
         return order._id === id ? { ...order, status } : order
       })
       setOrders(newOrders)
-
     } catch (err) {
       toast.error('Falha no sistema! Tente novamente')
     } finally {
       setisLoading(false)
       toast.success('Status atualizado com sucesso')
     }
-
   }
 
   return (
@@ -62,14 +58,18 @@ function Row({ row, setOrders, orders }) {
         <TableCell>{row.name}</TableCell>
         <TableCell>{row.date}</TableCell>
         <TableCell>
-          <ReactSelectStyle options={status.filter(sts => sts.value !== 'Todos')}
+          <ReactSelectStyle
+            options={status.filter(sts => sts.value !== 'Todos')}
             menuPortalTarget={document.body}
-            placeholder='Status'
-            defaultValue={status.find(option => option.value === row.status) || null}
+            placeholder="Status"
+            defaultValue={
+              status.find(option => option.value === row.status) || null
+            }
             onChange={newStatus => {
               setNewStatus(row.orderId, newStatus.value)
             }}
-            isLoading={isLoading} />
+            isLoading={isLoading}
+          />
         </TableCell>
       </TableRow>
       <TableRow>
@@ -88,7 +88,7 @@ function Row({ row, setOrders, orders }) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.products.map((productRow) => (
+                  {row.products.map(productRow => (
                     <TableRow key={productRow.id}>
                       <TableCell component="th" scope="row">
                         {productRow.quantity}
@@ -96,7 +96,10 @@ function Row({ row, setOrders, orders }) {
                       <TableCell>{productRow.name}</TableCell>
                       <TableCell>{productRow.category}</TableCell>
                       <TableCell>
-                        <ProductsImg src={productRow.url} alt='imagem do produto' />
+                        <ProductsImg
+                          src={productRow.url}
+                          alt="imagem do produto"
+                        />
                       </TableCell>
                     </TableRow>
                   ))}
@@ -107,7 +110,7 @@ function Row({ row, setOrders, orders }) {
         </TableCell>
       </TableRow>
     </React.Fragment>
-  );
+  )
 }
 
 Row.propTypes = {
@@ -123,12 +126,10 @@ Row.propTypes = {
         quantity: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      }),
+        url: PropTypes.string.isRequired
+      })
     ).isRequired
   }).isRequired
-};
-
-
+}
 
 export default Row

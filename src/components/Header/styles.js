@@ -2,12 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 72px;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
   @media (max-width: 600px) {
     justify-content: space-between;
     padding: 10px;
