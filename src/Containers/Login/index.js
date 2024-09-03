@@ -5,19 +5,20 @@ import { toast } from 'react-toastify'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
-import LoginImg from '../../assets/bg.svg'
+import LoginImg from '../../assets/bg.jpg'
 import Logo from '../../assets/logo.svg'
 import { Button, ErrorMessage } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
   Container,
+  Section,
   LoginImage,
   ContainerItens,
+  ImageLogo,
   Label,
   Input,
   SignInLink
-
 } from './styles'
 import { useHistory, Link } from 'react-router-dom/'
 
@@ -72,41 +73,48 @@ export function Login() {
 
   return (
     <Container>
-      <LoginImage src={LoginImg} alt="login-image" />
-      <ContainerItens>
-        <img src={Logo} alt="logo-code-burger" />
+      <Section>
+        <LoginImage>
+          <img src={LoginImg} alt="login-image" />
+        </LoginImage>
+        <ContainerItens>
+          <ImageLogo>
+            <img src={Logo} alt="logo-code-burger" />
+          </ImageLogo>
 
-        <h1>Login</h1>
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <Label>Email</Label>
-          <Input
-            type="email"
-            {...register('email')}
-            error={errors.email?.message}
-          />
-          <ErrorMessage> {errors.email?.message} </ErrorMessage>
+          <h1>Login</h1>
+          <form noValidate onSubmit={handleSubmit(onSubmit)}>
+            <Label>Email</Label>
+            <Input
+              type="email"
+              {...register('email')}
+              error={errors.email?.message}
+            />
+            <ErrorMessage> {errors.email?.message} </ErrorMessage>
 
-          <Label>Senha</Label>
-          <Input
-            type="password"
-            {...register('password')}
-            error={errors.password?.message}
-          />
-          <ErrorMessage> {errors.password?.message} </ErrorMessage>
+            <Label>Senha</Label>
+            <Input
+              type="password"
+              {...register('password')}
+              error={errors.password?.message}
+            />
+            <ErrorMessage> {errors.password?.message} </ErrorMessage>
 
-          <Button type="submit" style={{ marginTop: 50, marginBottom: 25 }}>
-            Entrar
-          </Button>
-        </form>
+            <Button type="submit" style={{ marginTop: 50, marginBottom: 25 }}>
+              Entrar
+            </Button>
+          </form>
 
-        <SignInLink>
-          Não possui conta?{' '}
-          <Link style={{ color: 'white' }} to="/cadastro">
-            {' '}
-            Clique aqui.
-          </Link>{' '}
-        </SignInLink>
-      </ContainerItens>
+          <SignInLink>
+            Não possui conta?{' '}
+            <Link style={{ color: 'white' }} to="/cadastro">
+              {' '}
+              Clique aqui.
+            </Link>{' '}
+          </SignInLink>
+        </ContainerItens>
+      </Section>
     </Container>
   )
 }
+export default Login

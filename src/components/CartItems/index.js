@@ -18,7 +18,7 @@ export function CartItems() {
         <p>Preço</p>
         <p style={{ paddingRight: 30 }}>Quantidade</p>
         <p>Total</p>
-        <p>Ecluir</p>
+        <p>Excluir</p>
       </Header>
 
       {CartProducts && CartProducts.length > 0 ? (

@@ -4,12 +4,13 @@ import ProductsLogo from '../../assets/logo-produtos.svg'
 import {
   Container,
   ProductsImg,
+  Hamburger,
   CategoryButton,
   CategoryMenu,
   ProductsContainer
 } from './styles'
 import api from '../../services/api'
-import { CardProduct } from '../../components'
+import { CardProduct, Header } from '../../components'
 import formatCurrency from '../../Utils/formatCurrency'
 
 export function Products({ location: { state } }) {
@@ -17,7 +18,7 @@ export function Products({ location: { state } }) {
   if (state?.categoryId) {
     categoryId = state.categoryId
   }
-
+  const [menuOpen, setMenuOpen] = useState(false)
   const [categories, setCategories] = useState([])
   const [produtcs, setProducts] = useState([])
   const [FilteredProducts, setFilteredProducts] = useState([])
@@ -59,19 +60,34 @@ export function Products({ location: { state } }) {
     }
   }, [activeCategory, produtcs])
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const handleCategoryClick = categoryId => {
+    setActiveCategory(categoryId)
+    setMenuOpen(false) // Fecha o menu ao clicar em uma categoria
+  }
+
   return (
     <Container>
+      <Header />
       <ProductsImg src={ProductsLogo} alt="logo dos Produtos" />
-      <CategoryMenu>
+      <Hamburger>
+        <div className="hamburger" onClick={toggleMenu}>
+          <div />
+          <div />
+          <div />
+        </div>
+      </Hamburger>
+      <CategoryMenu menuOpen={menuOpen}>
         {categories &&
           categories.map(category => (
             <CategoryButton
               type="button"
               key={category.id}
               isActiveCategory={activeCategory === category.id}
-              onClick={() => {
-                setActiveCategory(category.id)
-              }}
+              onClick={() => handleCategoryClick(category.id)}
             >
               {category.name}
             </CategoryButton>

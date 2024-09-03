@@ -2,24 +2,55 @@ import styled from 'styled-components'
 import Background from '../../assets/background.svg'
 
 export const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   background: url('${Background}');
+  display: flex;
+  justify-content: center;
+`
+export const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `
-export const LoginImage = styled.img`
-  max-height: 95%;
-  width: 676px;
+export const LoginImage = styled.div`
+  img {
+    height: 620px;
+    width: 500px;
+    @media (max-width: 1200px) {
+      height: 625px;
+      width: 500px;
+    }
+    @media (max-width: 930px) {
+      width: 330px;
+      margin-top: 30px;
+      height: 626px;
+    }
+    @media (max-width: 760px) {
+      display: none;
+    }
+  }
 `
 export const ContainerItens = styled.div`
   background: #373737;
   border-radius: 0 10px 10px 0;
-  max-height: 95%;
   padding: 25px 75px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1200px) {
+    padding: 25px 40px;
+  }
+  @media (max-width: 930px) {
+    padding: 25px 25px;
+  }
+
+  img {
+    @media (max-width: 1200px) {
+      width: 300px;
+      padding: 25px 40px;
+    }
+  }
 
   form {
     display: flex;
@@ -35,6 +66,13 @@ export const ContainerItens = styled.div`
     text-align: center;
     margin-top: 100px;
   }
+  @media (max-width: 930px) {
+    margin-top: 30px;
+  }
+`
+export const ImageLogo = styled.div`
+  display: flex;
+  justify-content: center;
 `
 export const Label = styled.p`
   font-style: normal;
@@ -53,6 +91,10 @@ export const Input = styled.input`
   border-radius: 5px;
   border: none;
   padding-left: 10px;
+
+  @media (max-width: 930px) {
+    width: 330px;
+  }
 `
 
 export const SignInLink = styled.p`
@@ -67,4 +109,3 @@ export const SignInLink = styled.p`
     text-decoration: underline;
   }
 `
-

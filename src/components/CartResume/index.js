@@ -48,7 +48,10 @@ export function CartResume() {
           <p>{formatCurrency(finalPrice + deliveryTax)}</p>
         </div>
       </Container>
-      <Button style={{ width: '100%', marginTop: 30 }} onClick={submitOrder}>
+      <Button
+        style={{ width: '100%', marginTop: 30, maxWidth: ' 800px' }}
+        onClick={submitOrder}
+      >
         Finalizar Pedido
       </Button>
     </div>

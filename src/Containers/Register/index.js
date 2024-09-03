@@ -4,12 +4,14 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import api from '../../services/api'
 
-import RegisterImg from '../../assets/registerImg.svg'
+import RegisterImg from '../../assets/registerbg.png'
 import Logo from '../../assets/logo.svg'
 import {
   Container,
+  Section,
   RegisterImage,
   ContainerItens,
+  ImageLogo,
   Label,
   Input,
   SignInLink
@@ -76,57 +78,60 @@ export function Register() {
 
   return (
     <Container>
-      <RegisterImage src={RegisterImg} alt="register-image" />
-      <ContainerItens>
-        <img src={Logo} alt="logo-code-burger" />
+      <Section>
+        <RegisterImage src={RegisterImg} alt="register-image" />
+        <ContainerItens>
+          <ImageLogo>
+            <img src={Logo} alt="logo-code-burger" />
+          </ImageLogo>
+          <h1>Cadastre-se</h1>
+          <form noValidate onSubmit={handleSubmit(onSubmit)}>
+            <Label>Nome</Label>
+            <Input
+              type="text"
+              {...register('name')}
+              error={errors.name?.message}
+            />
+            <ErrorMessage> {errors.name?.message} </ErrorMessage>
 
-        <h1>Cadastre-se</h1>
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <Label>Nome</Label>
-          <Input
-            type="text"
-            {...register('name')}
-            error={errors.name?.message}
-          />
-          <ErrorMessage> {errors.name?.message} </ErrorMessage>
+            <Label>Email</Label>
+            <Input
+              type="email"
+              {...register('email')}
+              error={errors.email?.message}
+            />
+            <ErrorMessage> {errors.email?.message} </ErrorMessage>
 
-          <Label>Email</Label>
-          <Input
-            type="email"
-            {...register('email')}
-            error={errors.email?.message}
-          />
-          <ErrorMessage> {errors.email?.message} </ErrorMessage>
+            <Label>Senha</Label>
+            <Input
+              type="password"
+              {...register('password')}
+              error={errors.password?.message}
+            />
+            <ErrorMessage> {errors.password?.message} </ErrorMessage>
 
-          <Label>Senha</Label>
-          <Input
-            type="password"
-            {...register('password')}
-            error={errors.password?.message}
-          />
-          <ErrorMessage> {errors.password?.message} </ErrorMessage>
+            <Label>Confirma Senha</Label>
+            <Input
+              type="password"
+              {...register('confirmPassword')}
+              error={errors.confirmPassword?.message}
+            />
+            <ErrorMessage> {errors.confirmPassword?.message} </ErrorMessage>
 
-          <Label>Confirma Senha</Label>
-          <Input
-            type="password"
-            {...register('confirmPassword')}
-            error={errors.confirmPassword?.message}
-          />
-          <ErrorMessage> {errors.confirmPassword?.message} </ErrorMessage>
+            <Button type="submit" style={{ marginTop: 25, marginBottom: 25 }}>
+              Confirmar
+            </Button>
+          </form>
 
-          <Button type="submit" style={{ marginTop: 25, marginBottom: 25 }}>
-            Confirmar
-          </Button>
-        </form>
-
-        <SignInLink>
-          Já possui conta?{' '}
-          <Link style={{ color: 'white' }} to="/login">
-            {' '}
-            Clique aqui.
-          </Link>{' '}
-        </SignInLink>
-      </ContainerItens>
+          <SignInLink>
+            Já possui conta?{' '}
+            <Link style={{ color: 'white' }} to="/login">
+              {' '}
+              Clique aqui.
+            </Link>{' '}
+          </SignInLink>
+        </ContainerItens>
+      </Section>
     </Container>
   )
 }

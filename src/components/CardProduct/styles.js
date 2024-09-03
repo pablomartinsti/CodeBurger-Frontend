@@ -7,7 +7,6 @@ export const Container = styled.div`
   display: flex;
   gap: 12px;
   padding: 16px;
-  width: max-content;
 
   div {
     display: flex;
@@ -18,6 +17,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   width: 150px;
+  height: 150px;
   border-radius: 10px;
 `
 

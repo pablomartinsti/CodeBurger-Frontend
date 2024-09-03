@@ -9,9 +9,22 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `
+export const Section = styled.div`
+  display: flex;
+  max-width: 100%;
+`
 export const RegisterImage = styled.img`
-  max-height: 95%;
-  width: 700px;
+  width: 550px;
+  height: 723px;
+  @media (max-width: 1200px) {
+    width: 415px;
+  }
+  @media (max-width: 930px) {
+    width: 330px;
+  }
+  @media (max-width: 760px) {
+    display: none;
+  }
 `
 export const ContainerItens = styled.div`
   background: #373737;
@@ -20,9 +33,8 @@ export const ContainerItens = styled.div`
   padding: 25px 75px;
   display: flex;
   flex-direction: column;
-
-  img {
-    height: 90px;
+  @media (max-width: 930px) {
+    padding: 25px 30px;
   }
 
   form {
@@ -37,7 +49,15 @@ export const ContainerItens = styled.div`
     line-height: 28px;
     color: #fff;
     text-align: center;
-    margin-top: 10px;
+    margin: 15px 0;
+  }
+`
+export const ImageLogo = styled.div`
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 270px;
   }
 `
 export const Label = styled.p`
@@ -57,6 +77,9 @@ export const Input = styled.input`
   border-radius: 5px;
   border: none;
   padding-left: 10px;
+  @media (max-width: 930px) {
+    width: 330px;
+  }
 `
 
 export const SignInLink = styled.p`
@@ -71,4 +94,3 @@ export const SignInLink = styled.p`
     text-decoration: underline;
   }
 `
-

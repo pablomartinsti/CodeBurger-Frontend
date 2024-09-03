@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useUser } from '../../hooks/UserContext'
 import Person from '../../assets/user.svg'
 import Cart from '../../assets/carrinho.svg'
 import {
   Container,
+  Hamburger,
   ContainerLeft,
   ContainerRight,
   Line,
@@ -15,6 +16,7 @@ import {
 
 export function Header() {
   const { logout, userData } = useUser()
+  const [menuOpen, setMenuOpen] = useState(false)
   const {
     push,
     location: { pathname }
@@ -23,6 +25,13 @@ export function Header() {
   const logoutUser = () => {
     logout()
     push('/login')
+  }
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+  const closeMenu = () => {
+    setMenuOpen(false)
   }
   return (
     <Container>
@@ -38,13 +47,19 @@ export function Header() {
         </PageLink>
       </ContainerLeft>
 
-      <ContainerRight>
+      <Hamburger onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </Hamburger>
+
+      <ContainerRight menuOpen={menuOpen}>
         <PageLink onClick={() => push('/carrinho')}>
-          <img src={Cart} alt="carrinho" />
+          <img onClick={closeMenu} src={Cart} alt="carrinho" />
         </PageLink>
         <Line></Line>
         <PageLink>
-          <img src={Person} alt="usuario" />
+          <img onClick={closeMenu} src={Person} alt="usuario" />
         </PageLink>
         <ContainerText>
           <p>Olá {userData.name}</p>
@@ -54,3 +69,4 @@ export function Header() {
     </Container>
   )
 }
+export default Header

@@ -8,6 +8,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 800px;
+
+  @media (max-width: 600px) {
+    width: 360px;
+  }
 
   .container-top {
     display: grid;
@@ -16,6 +21,7 @@ export const Container = styled.div`
       'title title'
       'items items-price'
       'delivery-tax delivery-tax-price';
+    justify-content: space-between;
 
     .title {
       grid-area: title;

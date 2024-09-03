@@ -29,7 +29,11 @@ export const Container = styled.div`
   }
 `
 
-export const CategoryImg = styled.img``
+export const CategoryImg = styled.img`
+  @media (max-width: 568px) {
+    width: 350px;
+  }
+`
 
 export const Containeritems = styled.div`
   display: flex;
@@ -37,6 +41,7 @@ export const Containeritems = styled.div`
 `
 export const Image = styled.img`
   width: 200px;
+  height: 200px;
   border-radius: 10px;
 `
 export const Button = styled(Link)`

@@ -10,10 +10,9 @@ function Routes() {
       <Switch>
         <Route component={Login} path="/login" />
         <Route component={Register} path="/cadastro" />
-        <PrivateRoute exact component={Home} path="/" />
-        <PrivateRoute component={Products} path="/produtos" />
+        <Route exact component={Home} path="/" />
+        <Route component={Products} path="/produtos" />
         <PrivateRoute component={Cart} path="/carrinho" />
-
 
         <PrivateRoute component={Admin} path={paths.Order} isAdmin />
         <PrivateRoute component={Admin} path={paths.Products} isAdmin />
