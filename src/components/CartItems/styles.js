@@ -29,6 +29,7 @@ export const Body = styled.div`
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 0px 20px;
   padding: 10px;
+  align-items: center;
 
   @media (max-width: 600px) {
     align-items: center;
@@ -40,6 +41,7 @@ export const Body = styled.div`
   img {
     border-radius: 10px;
     width: 120px;
+    height: 120px;
   }
 
   p {
