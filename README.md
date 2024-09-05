@@ -17,13 +17,19 @@
 
   <h2>🖼️ Capturas de Tela</h2>
   <p>Tela Inicial:</p>
-  <img src="./assets/tela-inicial.png" alt="Tela Inicial" width="600"/>
-  <p>Carrossel de Produtos:</p>
-  <img src="./assets/carrossel-produtos.png" alt="Carrossel de Produtos" width="600"/>
+  <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/home.png" alt="Tela Inicial" width="600"/>
+  <p>Tela de Produtos:</p>
+  <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/produtos.png" alt="Tela de Produtos" width="600"/>
   <p>Carrinho de Compras:</p>
-  <img src="./assets/carrinho-compras.png" alt="Carrinho de Compras" width="600"/>
+  <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/carrinho.png" alt="Carrinho de Compras" width="600"/>
+    <p>Tela Login:</p>
+  <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/login.png" alt="Tela Login" width="600"/>
+    <p>Tela Cadastro:</p>
+  <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/cadastro.png" alt="Tela Cadastro" width="600"/>
   <p>Painel Administrativo:</p>
-  <img src="./assets/painel-administrativo.png" alt="Painel Administrativo" width="600"/>
+  <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/pedidos.png" alt="Painel Administrativo" width="600"/>
+    <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/lista%20de%20produtos.png" alt="Painel Administrativo" width="600"/>
+      <img src="https://github.com/pablomartinsti/devBurger-Frontend/blob/main/src/assets/novo%20produto.png" alt="Painel Administrativo" width="600"/>
 
   <h2>🎯 Funcionalidades Principais</h2>
   <ul>
@@ -50,30 +56,6 @@
     <li><strong>Inicie a aplicação:</strong> npm start ou yarn start</li>
     <li><strong>Acesse o projeto no navegador:</strong> http://localhost:3000</li>
   </ol>
-
-  <h2>📂 Estrutura do Projeto</h2>
-  <ul>
-    <li><strong>src/:</strong> Contém todo o código fonte do front-end.
-      <ul>
-        <li><strong>components/:</strong> Componentes reutilizáveis da interface.</li>
-        <li><strong>pages/:</strong> Páginas principais da aplicação (Login, Cadastro, Produtos, Carrinho, etc).</li>
-        <li><strong>styles/:</strong> Estilos globais e temas da aplicação.</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h2>📝 Contribuição</h2>
-  <p>Contribuições são bem-vindas! Se você deseja colaborar, siga as instruções abaixo:</p>
-  <ol>
-    <li>Fork o projeto.</li>
-    <li>Crie uma nova branch com suas mudanças: git checkout -b minha-branch</li>
-    <li>Commit suas mudanças: git commit -m 'Minha nova funcionalidade'</li>
-    <li>Push para a branch: git push origin minha-branch</li>
-    <li>Abra um Pull Request.</li>
-  </ol>
-
-  <h2>📄 Licença</h2>
-  <p>Este projeto não possui uma licença específica.</p>
 
   <h2>🔗 Links Úteis</h2>
   <ul>
