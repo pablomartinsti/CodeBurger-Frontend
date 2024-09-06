@@ -10,7 +10,7 @@ export function CardProduct({ produtc }) {
   const { push } = useHistory()
   return (
     <Container>
-      <Image src={produtc.url} alt="imagem do produto" />
+      <Image src={produtc.path} alt="imagem do produto" />
       <div>
         <ProductName>{produtc.name}</ProductName>
         <ProductPrice>{produtc.formatedPrice}</ProductPrice>
