@@ -7,6 +7,7 @@ export const Container = styled.div`
 
 export const CartImg = styled.img`
   width: 100%;
+  margin-top: 70px;
 `
 export const Wrapper = styled.div`
   display: flex;

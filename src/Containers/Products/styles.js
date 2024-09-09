@@ -7,6 +7,7 @@ export const Container = styled.div`
 
 export const ProductsImg = styled.img`
   width: 100%;
+  margin-top: 70px;
 `
 export const Hamburger = styled.div`
   display: flex;

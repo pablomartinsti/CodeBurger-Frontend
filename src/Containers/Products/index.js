@@ -66,7 +66,7 @@ export function Products({ location: { state } }) {
 
   const handleCategoryClick = categoryId => {
     setActiveCategory(categoryId)
-    setMenuOpen(false) // Fecha o menu ao clicar em uma categoria
+    setMenuOpen(false)
   }
 
   return (
