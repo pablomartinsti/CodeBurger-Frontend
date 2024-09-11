@@ -1,13 +1,13 @@
 
-  <h1>DevBurger Frontend</h1>
+  <h1>CodeBurger Frontend</h1>
   <p>🚀 <strong>Sistema Completo de Gestão para Hamburgueria - Front-end</strong></p>
-  <p>Este repositório contém o código fonte do front-end do DevBurger, uma aplicação web desenvolvida para gerenciar pedidos e produtos de uma hamburgueria de forma intuitiva e eficiente.</p>
+  <p>Este repositório contém o código fonte do front-end do CodeBurger, uma aplicação web desenvolvida para gerenciar pedidos e produtos de uma hamburgueria de forma intuitiva e eficiente.</p>
 
   <h2>🌐 Link para o Deploy</h2>
-  <p>Confira o projeto em produção: <a href="https://dev-burger-frontend.vercel.app/">DevBurger - Frontend</a></p>
+  <p>Confira o projeto em produção: <a href="https://dev-burger-frontend.vercel.app/">CodeBurger - Frontend</a></p>
 
   <h2>📸 Visão Geral</h2>
-  <p>O DevBurger oferece uma experiência de usuário fluida, permitindo que os clientes naveguem por categorias de produtos, adicionem itens ao carrinho e finalizem seus pedidos. A aplicação inclui funcionalidades como:</p>
+  <p>O CodeBurger oferece uma experiência de usuário fluida, permitindo que os clientes naveguem por categorias de produtos, adicionem itens ao carrinho e finalizem seus pedidos. A aplicação inclui funcionalidades como:</p>
   <ul>
     <li><strong>Cadastro e Login de Usuários:</strong> Crie uma conta para acessar todas as funcionalidades do site.</li>
     <li><strong>Tela Inicial com Carrosséis:</strong> Visualize categorias de produtos e promoções em carrosséis interativos.</li>
@@ -38,9 +38,7 @@
     <li><strong>Gerenciamento de pedidos e produtos:</strong> Ferramentas para administradores atualizarem o status dos pedidos e gerenciarem o catálogo de produtos.</li>
   </ul>
 
-  <h2>🚧 Status do Projeto</h2>
-  <p>Atualmente, o front-end está em produção e pode ser acessado <a href="https://dev-burger-frontend.vercel.app/">aqui</a>. O deploy do back-end e a integração dos bancos de dados ainda estão em andamento.</p>
-
+ 
   <h2>🛠️ Tecnologias Utilizadas</h2>
   <ul>
     <li><strong>React.js:</strong> Framework JavaScript para construção de interfaces de usuário.</li>
@@ -59,7 +57,7 @@
 
   <h2>🔗 Links Úteis</h2>
   <ul>
-    <li><a href="https://github.com/pablomartinsti/devburger-api">Back-end do DevBurger</a></li>
+    <li><a href="https://github.com/pablomartinsti/devburger-api">Back-end CodeBurger</a></li>
   </ul>
 </body>
 </html>
